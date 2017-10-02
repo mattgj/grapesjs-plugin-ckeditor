@@ -5,22 +5,22 @@ var name = 'grapesjs-plugin-ckeditor';
 var env = process.env.WEBPACK_ENV;
 var plugins = [];
 
-if(env !== 'dev'){
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }));
+if (env !== 'dev') {
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } })
+  );
   plugins.push(new webpack.BannerPlugin(pkg.name + ' - ' + pkg.version));
 }
 
 module.exports = {
   entry: './src/main',
   output: {
-      filename: './dist/' + name + '.min.js',
-      library: name,
-      libraryTarget: 'umd',
+    filename: './dist/' + name + '.min.js',
+    library: name,
+    libraryTarget: 'umd'
   },
   module: {
-    preLoaders: [
-        { test: /\.json$/, loader: 'json'},
-    ],
+    preLoaders: [{ test: /\.json$/, loader: 'json' }],
     loaders: [
       {
         test: /\.jsx?$/,
@@ -30,8 +30,8 @@ module.exports = {
         query: {
           presets: ['es2015']
         }
-      },
-    ],
+      }
+    ]
   },
   plugins: plugins
 };

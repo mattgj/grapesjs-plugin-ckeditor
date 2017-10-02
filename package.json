@@ -5,16 +5,12 @@
   "main": "dist/grapesjs-plugin-ckeditor.min.js",
   "scripts": {
     "lint": "eslint src",
-    "build": "WEBPACK_ENV=prod && npm run v:patch && webpack",
+    "build": "WEBPACK_ENV=prod && webpack",
     "v:patch": "npm version --no-git-tag-version patch",
-    "start": "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
+    "start":
+      "WEBPACK_ENV=dev ./node_modules/.bin/webpack-dev-server --progress --colors"
   },
-  "keywords": [
-    "grapesjs",
-    "plugin",
-    "ckeditor",
-    "wysiwyg"
-  ],
+  "keywords": ["grapesjs", "plugin", "ckeditor", "wysiwyg"],
   "author": "Artur Arseniev",
   "license": "BSD-3-Clause",
   "devDependencies": {
